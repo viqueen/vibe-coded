@@ -22,9 +22,7 @@ const THEME_KEY = "game-gallery-theme";
 const MODE_KEY = "game-gallery-mode";
 
 function applyMode(mode: Mode) {
-  const prefersDark = window.matchMedia(
-    "(prefers-color-scheme: dark)",
-  ).matches;
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const isDark = mode === "dark" || (mode === "system" && prefersDark);
   document.documentElement.classList.toggle("dark", isDark);
 }

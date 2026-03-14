@@ -26,7 +26,10 @@ const INITIAL_TIME = 60;
 const BEST_SCORE_KEY = "2048-time-rush-best";
 
 function createEmptyBoard(): Board {
-  return Array.from({ length: SIZE }, () => Array(SIZE).fill(null) as CellValue[]);
+  return Array.from(
+    { length: SIZE },
+    () => Array(SIZE).fill(null) as CellValue[],
+  );
 }
 
 function getEmptyCells(board: Board): [number, number][] {
@@ -100,7 +103,12 @@ function slideLeft(board: Board): {
 function moveBoard(
   board: Board,
   direction: Direction,
-): { board: Board; scoreGained: number; mergeCount: number; merged: Set<string> } {
+): {
+  board: Board;
+  scoreGained: number;
+  mergeCount: number;
+  merged: Set<string>;
+} {
   const rotations: Record<Direction, number> = {
     left: 0,
     down: 1,

@@ -31,7 +31,10 @@ function GamePage() {
 
       <Card>
         <CardContent className="flex flex-col items-center gap-4 p-8 text-center">
-          <game.icon className="h-16 w-16 text-primary" aria-label={game.title} />
+          <game.icon
+            className="h-16 w-16 text-primary"
+            aria-label={game.title}
+          />
           <h2 className="text-2xl font-bold sm:text-3xl">{game.title}</h2>
           <p className="max-w-md text-muted-foreground">{game.description}</p>
           <div className="flex flex-wrap justify-center gap-2">
