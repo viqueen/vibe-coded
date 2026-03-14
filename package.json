@@ -7,6 +7,9 @@
   "workspaces": [
     "web/"
   ],
+  "devDependencies": {
+    "vite": "^8.0.0"
+  },
   "scripts": {
     "format": "npm run format --workspaces --if-present",
     "format:check": "npm run format:check --workspaces --if-present",
