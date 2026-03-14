@@ -5,6 +5,20 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Game Gallery</title>
+    <script>
+      (function () {
+        var t = localStorage.getItem("game-gallery-theme") || "burgundy";
+        var m = localStorage.getItem("game-gallery-mode") || "system";
+        document.documentElement.setAttribute("data-theme", t);
+        if (
+          m === "dark" ||
+          (m === "system" &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+          document.documentElement.classList.add("dark");
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
