@@ -30,9 +30,7 @@ function GalleryPage() {
         >
           <Card className="h-full transition-shadow hover:shadow-lg group-focus-visible:ring-2 group-focus-visible:ring-ring">
             <CardContent className="flex flex-col gap-3 p-5">
-              <span className="text-4xl" role="img" aria-label={game.title}>
-                {game.emoji}
-              </span>
+              <game.icon className="h-10 w-10 text-primary" aria-label={game.title} />
               <div className="space-y-1">
                 <h3 className="text-lg font-semibold leading-tight">
                   {game.title}
