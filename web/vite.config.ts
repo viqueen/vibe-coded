@@ -20,7 +20,7 @@ function spaFallback(): Plugin {
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/vibe-coded/",
+  base: "/",
   plugins: [
     TanStackRouterVite({ target: "react" }),
     react(),
