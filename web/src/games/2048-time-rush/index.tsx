@@ -166,9 +166,9 @@ export default function Game() {
                     value !== null
                       ? `${getTileClass(value)} ${getTileFontSize(value)} ${
                           isMerged
-                            ? "scale-110"
+                            ? "animate-[merge-pop_150ms_ease-out]"
                             : isNew
-                              ? "scale-90 animate-[pop_200ms_ease-out_forwards]"
+                              ? "animate-[pop_200ms_ease-out_forwards]"
                               : ""
                         }`
                       : "bg-muted-foreground/10"
