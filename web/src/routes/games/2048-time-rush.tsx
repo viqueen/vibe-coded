@@ -11,7 +11,12 @@ function GamePage() {
   return (
     <div className="fixed inset-0 flex flex-col bg-background text-foreground overflow-hidden">
       <div className="shrink-0 px-3 pt-3 sm:px-6 sm:pt-4">
-        <Button variant="ghost" size="sm" nativeButton={false} render={<Link to="/" />}>
+        <Button
+          variant="ghost"
+          size="sm"
+          nativeButton={false}
+          render={<Link to="/" />}
+        >
           <ArrowLeft className="h-4 w-4" />
           Gallery
         </Button>

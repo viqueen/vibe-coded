@@ -16,14 +16,21 @@ function GamePage() {
     return (
       <div className="flex flex-col items-center gap-4 py-20">
         <p className="text-lg text-muted-foreground">Game not found</p>
-        <Button nativeButton={false} render={<Link to="/" />}>Back to gallery</Button>
+        <Button nativeButton={false} render={<Link to="/" />}>
+          Back to gallery
+        </Button>
       </div>
     );
   }
 
   return (
     <div className="space-y-6">
-      <Button variant="ghost" size="sm" nativeButton={false} render={<Link to="/" />}>
+      <Button
+        variant="ghost"
+        size="sm"
+        nativeButton={false}
+        render={<Link to="/" />}
+      >
         &larr; Back to gallery
       </Button>
 
