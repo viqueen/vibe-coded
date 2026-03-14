@@ -304,6 +304,18 @@
   }
 }
 
+@keyframes merge-pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

@@ -57,6 +57,17 @@ export default function Game() {
     return () => window.removeEventListener("keydown", handleKey);
   }, [move]);
 
+  // Prevent page scroll while touching the game board
+  useEffect(() => {
+    const el = boardRef.current;
+    if (!el) return;
+    function preventScroll(e: TouchEvent) {
+      e.preventDefault();
+    }
+    el.addEventListener("touchmove", preventScroll, { passive: false });
+    return () => el.removeEventListener("touchmove", preventScroll);
+  }, []);
+
   // Touch controls
   const handleTouchStart = useCallback((e: React.TouchEvent) => {
     const touch = e.touches[0];
@@ -87,7 +98,7 @@ export default function Game() {
   const timeUrgent = state.timeLeft <= 10;
 
   return (
-    <Card className="mx-auto max-w-md">
+    <Card className="mx-auto w-full max-w-md">
       <CardContent className="flex flex-col gap-4 p-4 sm:p-6">
         <div className="text-center">
           <h2 className="text-xl font-bold sm:text-2xl">2048 Time Rush</h2>
@@ -155,9 +166,9 @@ export default function Game() {
                     value !== null
                       ? `${getTileClass(value)} ${getTileFontSize(value)} ${
                           isMerged
-                            ? "scale-110"
+                            ? "animate-[merge-pop_150ms_ease-out]"
                             : isNew
-                              ? "scale-90 animate-[pop_200ms_ease-out_forwards]"
+                              ? "animate-[pop_200ms_ease-out_forwards]"
                               : ""
                         }`
                       : "bg-muted-foreground/10"
