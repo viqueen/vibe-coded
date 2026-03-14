@@ -1,10 +1,7 @@
 import { Sun, Moon, Monitor } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  useTheme,
-  type ColorTheme,
-  type Mode,
-} from "@/components/theme-provider";
+import { useTheme } from "@/components/use-theme";
+import type { ColorTheme, Mode } from "@/components/theme-provider";
 
 const colorThemes: { value: ColorTheme; label: string; swatch: string }[] = [
   { value: "burgundy", label: "Burgundy", swatch: "oklch(.37 .14 15)" },

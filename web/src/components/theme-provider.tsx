@@ -1,22 +1,8 @@
-import {
-  createContext,
-  useCallback,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
+import { useCallback, useEffect, useState } from "react";
+import { ThemeContext } from "./theme-context";
 
 export type ColorTheme = "burgundy" | "sage" | "ocean" | "amethyst";
 export type Mode = "light" | "dark" | "system";
-
-interface ThemeContextValue {
-  colorTheme: ColorTheme;
-  mode: Mode;
-  setColorTheme: (theme: ColorTheme) => void;
-  setMode: (mode: Mode) => void;
-}
-
-const ThemeContext = createContext<ThemeContextValue | null>(null);
 
 const THEME_KEY = "game-gallery-theme";
 const MODE_KEY = "game-gallery-mode";
@@ -63,10 +49,4 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       {children}
     </ThemeContext>
   );
-}
-
-export function useTheme() {
-  const ctx = useContext(ThemeContext);
-  if (!ctx) throw new Error("useTheme must be used within ThemeProvider");
-  return ctx;
 }
